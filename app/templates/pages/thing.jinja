@@ -14,21 +14,55 @@
         <article>
 
             <header>
-                <h4>{{ thing["name"] }}</h4>
+                <h4>{{ thing.name }}</h4>
             </header>
 
-            <p>{{ thing["description"] }}</p>
+            <p>{{ thing.description }}</p>
 
-            <p>Cost <strong>${{ thing["cost"] }}</strong></p>
+            <p>Cost <strong>${{ thing.cost }}</strong></p>
 
-            <p>Rating <strong>{{ thing["rating"] }}</strong> / 5</p>
+            <p>Rating <strong>{{ thing.rating }}</strong> / 5</p>
 
             <footer>
-                Delete
+               <a href="/delete{{ thing.id }}"> Delete</a>
             </footer>
 
         </article>
 
+    </section>
+
+    <section>
+    
+        <article> 
+    
+            <form> 
+                 <label> 
+                        name
+                        <input type="text" name="name">
+
+                    </label>
+                    <label> 
+                        Description
+                        <input type="text" name="description">
+
+                    </label>
+                    <label> 
+                        cost $
+                        <input type="int" name="cost" min="0" required>
+
+                    </label>
+                    <label> 
+                        rating
+                        <input type="int" name="rating" min="0" max="5" required>
+
+                    </label>
+
+                    <button>add new thing</button>
+            </form>
+    
+    
+        </article>
+    
     </section>
 
 {% endblock %}
